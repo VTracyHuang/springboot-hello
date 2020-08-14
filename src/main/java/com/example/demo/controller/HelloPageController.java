@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloPageController {
     @RequestMapping("/helloPage")
     public String helloPage(){
-        return "/index";
+        return "index";
     }
 }

@@ -21,10 +21,6 @@
 		<allure.version>2.9.0</allure.version>
 		<!-- 解决mvn编译乱码问题-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<property>
-			<name>allure.results.directory</name>
-			<value>./target/allure-results</value>
-		</property>
 	</properties>
 	<dependencies>
 		<dependency>

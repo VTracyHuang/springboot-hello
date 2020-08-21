@@ -10,7 +10,7 @@ import ru.yandex.qatools.allure.annotations.Title;
 
 
 @SpringBootTest
-class SpringbootHelloApplicationTests {
+public class SpringbootHelloApplicationTests {
     @Features("测试目录")
     @Stories("测试子目录")
     @Title("测试一")
@@ -19,7 +19,7 @@ class SpringbootHelloApplicationTests {
 
         int a = 9;
         int b = 3;
-        assert (a+b == 11);
+        assert (a+b == 12);
         // LOGGER.info("jenkins单元测试");
     }
     @Features("测试目录")
@@ -29,7 +29,7 @@ class SpringbootHelloApplicationTests {
     public void Test2(){
 
         int a = 9;
-        int b = 3;
+        int b = 9;
         Assert.assertEquals(a,b);
         // LOGGER.info("jenkins单元测试");
     }

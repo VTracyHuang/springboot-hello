@@ -4,4 +4,6 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
-
+allure:
+  results:
+    directory: ./target/allure-results

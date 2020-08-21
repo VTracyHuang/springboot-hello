@@ -2,6 +2,7 @@ package com.example.demo;
 
 
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
@@ -29,7 +30,7 @@ class SpringbootHelloApplicationTests {
 
         int a = 9;
         int b = 3;
-        assert (a+b == 12);
+        Assert.assertEquals(a,b);
         // LOGGER.info("jenkins单元测试");
     }
 }

@@ -13,7 +13,9 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.filechooser.FileSystemView;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -59,14 +61,15 @@ public class ExcelController {
     }
 
     @GetMapping("/exportData")
-    public String exportExcelData(){
+    public String exportExcelData(HttpServletRequest request){
 
         try {
             //实现excel写的操作
             //1 设置写入文件夹地址和excel文件名称
-            ClassPathResource classPathResource = new ClassPathResource("/resources/excel/批量导出导师.xlsx");
-
-            String filePath = classPathResource.getPath();
+            File desktopDir = FileSystemView.getFileSystemView() .getHomeDirectory();
+            String desktopPath = desktopDir.getAbsolutePath();
+            String filePath = desktopPath + "/批量导出导师.xlsx";
+            //String filePath = "批量导出导师.xlsx";
 /*            File file = new File("/resources/excel/讲师新增模板.xlsx"); E:\resources\excel\讲师新增模板.xlsx (系统找不到指定的路径。)
             String filePath = file.getAbsolutePath();*/
             // 2 调用easyexcel里面的方法实现写操作

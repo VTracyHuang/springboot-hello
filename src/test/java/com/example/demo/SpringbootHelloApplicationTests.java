@@ -1,10 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.dao.PersonDao;
 import com.example.demo.entity.PageRequest;
 import com.example.demo.entity.PageResult;
 import com.example.demo.entity.Person;
-import com.example.demo.service.PayService;
 import com.example.demo.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +13,9 @@ import java.util.List;
 @SpringBootTest
 class SpringbootHelloApplicationTests {
 
-	@Autowired
-	private PayService payService;
 
 	@Autowired
 	private PersonService personService;
-
-	@Test
-	public void payTest(){
-		payService.minGoodsnumSum();
-	}
 
 	@Test
 	public void personTest(){
@@ -36,4 +27,5 @@ class SpringbootHelloApplicationTests {
 		}
 		//System.out.println(content.size());
 	}
+
 }

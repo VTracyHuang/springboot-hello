@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.imageio.ImageIO;
+import javax.print.Doc;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +30,13 @@ public class OfficeTest {
 
     @Test
     public void word2Image() throws IOException {
-
+        Document document = new Document();
+        document.loadFromFile("E:/ideaprojects/springboot-hello/src/main/resources/测试word.docx");
+        for (int i = 0; i < document.getPageCount(); i++) {
+            BufferedImage bufferedImage = document.saveToImages(i,ImageType.Bitmap);
+            File file = new File("E:/ideaprojects/springboot-hello/src/main/resources/images/" +  String.format(("Img-word-%d.png"),i));
+            ImageIO.write(bufferedImage, "PNG", file);
+        }
     }
 
     @Test
@@ -73,6 +80,5 @@ public class OfficeTest {
             File file = new File("E:/ideaprojects/springboot-hello/src/main/resources/images/" + String.format(("Img-pdf-%d.png"),i));
             ImageIO.write(image, "PNG", file);
         }
-
     }
 }

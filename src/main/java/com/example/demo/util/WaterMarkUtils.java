@@ -80,7 +80,7 @@ public class WaterMarkUtils {
 
     /**
      * 获取水印文字总长度
-     * 
+     *
      * @param waterMarkContent
      *            水印的文字
      * @param g
